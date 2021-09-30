@@ -30,5 +30,12 @@ public class LineComparison {
 
         System.out.println("Length of Line1: " + lengthOfLine1);
         System.out.println("Length of Line2: " + lengthOfLine2);
+
+        boolean result = Objects.equals(lengthOfLine1,lengthOfLine2);
+        if (result) {
+            System.out.println("Both lines are Equal");
+        } else {
+            System.out.println("Both lines are Not Equal");
+        }
     }
 }
