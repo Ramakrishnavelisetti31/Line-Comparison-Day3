@@ -1,9 +1,9 @@
 package com.bdlz.linecomparison;
 
-import java.util.*;
 import java.util.Scanner;
 
 public class LineComparison {
+    public static double lengthOfLine1,lengthOfLine2 ;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter x1 co-ordinate of line1: ");
@@ -25,17 +25,22 @@ public class LineComparison {
         int q2 = scanner.nextInt();
         scanner.close();
 
-        double lengthOfLine1 = Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
-        double lengthOfLine2 = Math.sqrt((p2-p1)*(p2-p1)+(q2-q1)*(q2-q1));
+        lengthOfLine1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        lengthOfLine2 = Math.sqrt((p2 - p1) * (p2 - p1) + (q2 - q1) * (q2 - q1));
 
         System.out.println("Length of Line1: " + lengthOfLine1);
         System.out.println("Length of Line2: " + lengthOfLine2);
 
-        boolean result = Objects.equals(lengthOfLine1,lengthOfLine2);
-        if (result) {
-            System.out.println("Both lines are Equal");
+        compareTo();
+    }
+
+       public static void compareTo(){
+        if (lengthOfLine1 > lengthOfLine2) {
+            System.out.println("Line1 is greater than line2");
+        } else if (lengthOfLine1 < lengthOfLine2) {
+            System.out.println("Line2 is greater than line1");
         } else {
-            System.out.println("Both lines are Not Equal");
+            System.out.println("Both Lines are Equal");
         }
     }
 }
