@@ -3,7 +3,7 @@ package com.bdlz.linecomparison;
 import java.util.Scanner;
 
 public class LineComparison {
-    public static double lengthOfLine1,lengthOfLine2 ;
+    public static Double lengthOfLine1,lengthOfLine2 ;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter x1 co-ordinate of line1: ");
@@ -31,16 +31,13 @@ public class LineComparison {
         System.out.println("Length of Line1: " + lengthOfLine1);
         System.out.println("Length of Line2: " + lengthOfLine2);
 
-        compareTo();
-    }
-
-       public static void compareTo(){
-        if (lengthOfLine1 > lengthOfLine2) {
-            System.out.println("Line1 is greater than line2");
-        } else if (lengthOfLine1 < lengthOfLine2) {
-            System.out.println("Line2 is greater than line1");
-        } else {
-            System.out.println("Both Lines are Equal");
-        }
+       int compareLength =  lengthOfLine1.compareTo(lengthOfLine2);
+       if (compareLength > 0) {
+           System.out.println("Length of Line1 is greater than Line2");
+       } else if (compareLength < 0) {
+           System.out.println("Length of Line1 is less than Line2");
+       } else {
+           System.out.println("Both of lines are equal");
+       }
     }
 }
